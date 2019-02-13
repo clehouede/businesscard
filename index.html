@@ -16,7 +16,9 @@
 <a href="https://clemencehouede.com">clemencehouede.com</a>
 
 
-
+ <div class="scroll-left">
+<p>Clémence Houédé // Digital Product Designer // New York </p>
+</div>
 
 <center>
 <h1>Should we work together?</h1>
@@ -77,25 +79,76 @@ document.loveform.output.value=amount+"%";
 </script>
 
 <form name=loveform>
-<input value="Clémence Houédé" name="name1" type="text" size="20"> + 
+<input value="Clémence Houédé" name="name1" type="text" size="20" readonly="readonly"> + 
 <input value="Enter your name" name="name2" type="text" size="20"> = 
-<input value="" name="output" type="text" size="6">
+<input value="" name="output" type="text" size="6" id="output">
 <br>
 <br>
-<input value="Calculate!" name="calculate" type="button" value="calculate" onclick="calc()">
+<input value="Calculate!" name="calculate" type="button" value="calculate" onclick="calc()" id="button">
 </form>
 
 <style>
 
 h1 {
-  font-size:40pt;
-  font-family: 'Neue Haas Grotesk', sans-serif;
+  font-size:35pt;
+  font-family: 'Neue Hass Grotesk', sans-serif;
+  font-weight: 500;
   color:blue;
   position: absolute; /* or absolute */
-  top: 35%;
+  top: 33%;
   left: 50%;
   /* bring your own prefixes */
   transform: translate(-50%, -50%);}
+
+
+.scroll-left {
+height: 50px; 
+overflow: hidden;
+position: relative;
+}
+.scroll-left p {
+position: absolute;
+font-size:35pt;
+  font-family: 'Neue Hass Grotesk', sans-serif;
+  font-weight: 500;
+  color:blue;
+  background-color: yellow;
+width: 100%;
+height: 100%;
+margin: 0;
+line-height: 50px;
+text-align: center;
+/* Starting position */
+-moz-transform:translateX(100%);
+-webkit-transform:translateX(100%); 
+transform:translateX(100%);
+/* Apply animation to this element */ 
+-moz-animation: scroll-left 15s linear infinite;
+-webkit-animation: scroll-left 15s linear infinite;
+animation: scroll-left 15s linear infinite;
+}
+/* Move it (define the animation) */
+@-moz-keyframes scroll-left {
+0% { -moz-transform: translateX(100%); }
+100% { -moz-transform: translateX(-100%); }
+}
+@-webkit-keyframes scroll-left {
+0% { -webkit-transform: translateX(100%); }
+100% { -webkit-transform: translateX(-100%); }
+}
+@keyframes scroll-left {
+0% { 
+-moz-transform: translateX(100%); /* Browser bug fix */
+-webkit-transform: translateX(100%); /* Browser bug fix */
+transform: translateX(100%); 
+}
+100% { 
+-moz-transform: translateX(-100%); /* Browser bug fix */
+-webkit-transform: translateX(-100%); /* Browser bug fix */
+transform: translateX(-100%); 
+}
+}
+
 
 form {
   position: absolute;
@@ -106,9 +159,11 @@ form {
 }
 
 input {
-  font-family : 'Asap', sans-serif;
+  font-family : 'Neue Hass Grotesk', sans-serif;
   font-size   : 110%;
+  color: blue;
 }
+
 
 body {
   background-color:white ;
@@ -130,14 +185,42 @@ a:link {
 }
 
 a:hover {
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg id='squiggle-link' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:ev='http://www.w3.org/2001/xml-events' viewBox='0 0 20 4'%3E%3Cstyle type='text/css'%3E.squiggle{animation:shift .3s linear infinite;}@keyframes shift {from {transform:translateX(0);}to {transform:translateX(-20px);}}%3C/style%3E%3Cpath fill='none' stroke='yellow' stroke-width='2' class='squiggle' d='M0,3.5 c 5,0,5,-3,10,-3 s 5,3,10,3 c 5,0,5,-3,10,-3 s 5,3,10,3'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg id='squiggle-link' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:ev='http://www.w3.org/2001/xml-events' viewBox='0 0 20 4'%3E%3Cstyle type='text/css'%3E.squiggle{animation:shift .3s linear infinite;}@keyframes shift {from {transform:translateX(0);}to {transform:translateX(-20px);}}%3C/style%3E%3Cpath fill='none' stroke='blue' stroke-width='2' class='squiggle' d='M0,3.5 c 5,0,5,-3,10,-3 s 5,3,10,3 c 5,0,5,-3,10,-3 s 5,3,10,3'/%3E%3C/svg%3E");
   background-position: bottom;
   background-repeat: repeat-x;
   background-size: 20%;
   border-bottom: 0;
   padding-bottom: .3em;
   text-decoration: none;
-  fill: yellow;
+  fill: blue;
+}
+
+
+#output {
+  font-size: 20px;
+  background-color:yellow;
+}
+
+#button {
+    background-color: blue;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius:6px;
+    color:yellow;
+    font-family: 'Neue Hass Grotesk', sans-serif;
+    font-size: 20px;
+    text-decoration: none;
+    cursor: pointer;
+    border:none;
+}
+
+
+
+#button:hover {
+    border: none;
+    background-color:yellow;
+    color: blue;
+    box-shadow: 0px 0px 1px #777;
 }
 
 </style>
@@ -224,8 +307,8 @@ position:absolute;
 visibility:visible;
 top:-50px;
 font-size:10pt;
-font-family: 'Asap', sans-serif;
-color:yellow;
+font-family: 'Neue Hass Grotesk', sans-serif;
+color:blue;
 }
 BODY {
 width:100%;overflow-x:hidden;overflow-y:scroll;
